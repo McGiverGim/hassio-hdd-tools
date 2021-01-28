@@ -1,7 +1,10 @@
 ARG BUILD_FROM
 FROM $BUILD_FROM
 
-RUN apk add --no-cache coreutils util-linux ncurses build-base make fio hdparm perl smartmontools vim apk-cron
+RUN apk add --no-cache gnupg coreutils util-linux ncurses build-base make fio hdparm perl smartmontools vim apk-cron
+
+# Update database
+RUN /usr/sbin/update-smart-drivedb
 
 # Copy cron file to the cron.d directory
 COPY data/cron /etc/cron.d/cron
