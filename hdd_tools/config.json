@@ -4,7 +4,7 @@
   "slug": "hdd_tools",
   "description": "HDD Tools provides S.M.A.R.T information",
   "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
-  "startup": "before",
+  "startup": "application",
   "boot": "auto",
   "map": ["share:rw"],
   "devices": [ "/dev/sda:/dev/sda:rwm" ],
